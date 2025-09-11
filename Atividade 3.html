@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Relatório — API (Interface de Programação de Aplicações)</title>
+  <meta name="author" content="Edson de Barros Junior" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="top">
+        <div>
+          <div class="identity">FATEC-SOROCABA</div>
+          <div class="meta">Programação Web — Relatório</div>
+        </div>
+        <div>
+          <div>API (Interface de Programação de Aplicações)</div>
+          <div class="meta">Profº: Denilce Veloso • Aluno: Edson de Barros Junior</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1>API (Interface de Programação de Aplicações)</h1>
+
+      <section class="toc" aria-label="Sumário">
+        <strong>Sumário</strong>
+        <ol>
+          <li><a href="#introducao">1. Introdução</a></li>
+          <li><a href="#conceitos">2. Conceitos Fundamentais</a>
+            <ol>
+              <li><a href="#definicao">2.1 Definição</a></li>
+              <li><a href="#componentes">2.2 Componentes de uma API</a></li>
+            </ol>
+          </li>
+          <li><a href="#tipos">3. Tipos de APIs</a>
+            <ol>
+              <li><a href="#abertura">3.1 Quanto à Abertura</a></li>
+              <li><a href="#padrao">3.2 Quanto ao Padrão Técnico</a></li>
+            </ol>
+          </li>
+          <li><a href="#boas-praticas">4. Boas Práticas no Uso de APIs</a>
+            <ol>
+              <li><a href="#seguranca">4.1 Segurança</a></li>
+              <li><a href="#documentacao">4.2 Documentação</a></li>
+              <li><a href="#versionamento">4.3 Versionamento e Manutenção</a></li>
+            </ol>
+          </li>
+          <li><a href="#conclusao">5. Conclusão</a></li>
+          <li><a href="#referencias">6. Referências Bibliográficas</a></li>
+        </ol>
+      </section>
+
+      <section id="introducao" class="section">
+        <h2>1. Introdução</h2>
+        <p>As Interfaces de Programação de Aplicações (APIs, do inglês Application Programming Interfaces) são mecanismos que permitem a comunicação entre diferentes softwares, possibilitando a integração e o compartilhamento de dados e funcionalidades. Com o avanço da transformação digital, as APIs se tornaram elementos essenciais no desenvolvimento de aplicações web, móveis e corporativas. Elas proporcionam padronização, eficiência e escalabilidade no desenvolvimento de sistemas, reduzindo custos e acelerando processos de inovação. Este documento apresenta conceitos fundamentais, principais tipos e boas práticas relacionadas ao uso de APIs.</p>
+      </section>
+
+      <section id="conceitos" class="section">
+        <h2>2. Conceitos Fundamentais</h2>
+
+        <h3 id="definicao">2.1 Definição</h3>
+        <p>Uma API é um conjunto de regras e protocolos que definem como sistemas distintos podem interagir. Ela atua como uma ponte entre aplicações, abstraindo a complexidade interna de cada sistema e expondo apenas os recursos necessários.</p>
+
+        <h3 id="componentes">2.2 Componentes de uma API</h3>
+        <p>Uma API geralmente é composta por:</p>
+        <ul>
+          <li><strong>Endpoints:</strong> URLs ou rotas que representam recursos ou funcionalidades.</li>
+          <li><strong>Métodos de Acesso:</strong> Operações, como GET, POST, PUT e DELETE, que indicam ações específicas.</li>
+          <li><strong>Formato de Dados:</strong> Padrões como JSON ou XML para envio e recebimento de informações.</li>
+          <li><strong>Mecanismos de Autenticação:</strong> Garantem que apenas usuários ou sistemas autorizados acessem os recursos.</li>
+        </ul>
+      </section>
+
+      <section id="tipos" class="section">
+        <h2>3. Tipos de APIs</h2>
+
+        <h3 id="abertura">3.1 Quanto à Abertura</h3>
+        <p>- <strong>APIs Públicas (Open APIs):</strong> Disponíveis para uso de qualquer desenvolvedor, geralmente com documentação aberta.</p>
+        <p>- <strong>APIs Privadas:</strong> Restringem o acesso a usuários internos ou parceiros autorizados.</p>
+        <p>- <strong>APIs de Parceiros:</strong> Compartilhadas com empresas específicas, mediante acordos comerciais.</p>
+
+        <h3 id="padrao">3.2 Quanto ao Padrão Técnico</h3>
+        <p>- <strong>REST (Representational State Transfer):</strong> Arquitetura amplamente utilizada por sua simplicidade e compatibilidade com HTTP.</p>
+        <p>- <strong>SOAP (Simple Object Access Protocol):</strong> Baseado em XML, com regras rígidas de comunicação e segurança.</p>
+        <p>- <strong>GraphQL:</strong> Linguagem de consulta que permite ao cliente especificar exatamente quais dados deseja obter.</p>
+      </section>
+
+      <section id="boas-praticas" class="section">
+        <h2>4. Boas Práticas no Uso de APIs</h2>
+
+        <h3 id="seguranca">4.1 Segurança</h3>
+        <p>Adoção de protocolos seguros (HTTPS), autenticação robusta (OAuth 2.0, JWT) e limitação de requisições para prevenir abusos.</p>
+
+        <h3 id="documentacao">4.2 Documentação</h3>
+        <p>Uma API eficaz deve possuir documentação clara, com exemplos práticos e explicações sobre cada endpoint. Ferramentas como Swagger facilitam a criação de guias interativos.</p>
+
+        <h3 id="versionamento">4.3 Versionamento e Manutenção</h3>
+        <p>O uso de versionamento (v1, v2, etc.) garante compatibilidade e evita que mudanças interrompam integrações existentes.</p>
+      </section>
+
+      <section id="conclusao" class="section">
+        <h2>5. Conclusão</h2>
+        <p>As APIs são elementos estratégicos no desenvolvimento de sistemas modernos, pois possibilitam integração, escalabilidade e inovação tecnológica. Com a aplicação de boas práticas de segurança, documentação e manutenção, as APIs se tornam ferramentas robustas para conectar aplicações e impulsionar negócios. No contexto de transformação digital, compreender e utilizar APIs de forma adequada é um diferencial competitivo para empresas e desenvolvedores.</p>
+      </section>
+
+      <section id="referencias" class="section">
+        <h2>6. Referências Bibliográficas</h2>
+        <ul>
+          <li>FIELDING, Roy T. <em>Architectural Styles and the Design of Network-based Software Architectures</em>. 2000. Tese (Doutorado) – University of California, Irvine.</li>
+          <li>MICROSOFT. API design guidance. Disponível em: <a href="https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design" target="_blank" rel="noopener">learn.microsoft.com</a>.</li>
+          <li>ORACLE. What is an API?. Disponível em: <a href="https://www.oracle.com/br/api/what-is-an-api/" target="_blank" rel="noopener">oracle.com</a>.</li>
+          <li>RED HAT. O que é uma API?. Disponível em: <a href="https://www.redhat.com/pt-br/topics/api/what-are-application-programming-interfaces" target="_blank" rel="noopener">redhat.com</a>.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <div>© 2025 • Edson de Barros Junior</div>
+      <div>FATEC-SOROCABA — Programação Web</div>
+    </footer>
+  </div>
+</body>
+</html>
