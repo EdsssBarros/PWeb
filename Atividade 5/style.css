@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #eee;
+    font-family: Arial, sans-serif;
+}
+
+.caixa-colorida {
+    width: 500px;
+    height: 500px;
+    border: 5px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.caixa-colorida h2::before {
+    content: "";
+}
+
+.caixa-colorida {
+    background-color: purple;
+    border-color: #800080;
+}
+
+.caixa-colorida h2::before {
+    content: "Roxo";
+}
+
+
+
+@media (min-width: 421px) {
+    .caixa-colorida {
+        background-color: #f5f5dc;
+        color: #333;
+        border-color: #c9c9b7;
+    }
+    .caixa-colorida h2::before {
+        content: "Bege";
+    }
+}
+
+
+@media (min-width: 769px) {
+    .caixa-colorida {
+        background-color: pink;
+        color: #333;
+        border-color: #ff69b4;
+    }
+    .caixa-colorida h2::before {
+        content: "Pink";
+    }
+}
+
+@media (min-width: 1025px) {
+    .caixa-colorida {
+        background-color: red;
+        color: white;
+        border-color: #cc0000;
+    }
+    .caixa-colorida h2::before {
+        content: "Vermelho";
+    }
+}
+
+@media (min-width: 1081px) {
+    .caixa-colorida {
+        background-color: blue;
+        color: white;
+        border-color: #0000cd;
+    }
+    .caixa-colorida h2::before {
+        content: "Azul";
+    }
+}
+
+@media (min-width: 1367px) {
+    .caixa-colorida {
+        background-color: yellow;
+        color: #333;
+        border-color: #cccc00;
+    }
+    .caixa-colorida h2::before {
+        content: "Amarelo";
+    }
+}
+
+@media (min-width: 1921px) {
+    .caixa-colorida {
+        background-color: green;
+        color: white;
+        border-color: #006400;
+    }
+    .caixa-colorida h2::before {
+        content: "Verde";
+    }
+}
