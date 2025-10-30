@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Janela Interativa</title>
+    <style>
+        img { width: 300px; height: auto; cursor: pointer; }
+        h1 { font-family: Arial, sans-serif; }
+        body { text-align: center; padding: 20px; }
+    </style>
+</head>
+<body>
+    <h1 id="statusJanela">Abra a janela</h1>
+    <img id="janela" src="janelas/janela_fechada.png" alt="Janela Fechada" />
+    
+    <script>
+        const imgJanela = document.getElementById('janela');
+        const status = document.getElementById('statusJanela');
+
+        imgJanela.addEventListener('mouseenter', () => {
+            imgJanela.src = 'janelas/janela_aberta.jpg';
+            status.textContent = 'Janela aberta';
+        });
+
+        imgJanela.addEventListener('mouseleave', () => {
+            imgJanela.src = 'janelas/janela_fechada.png';
+            status.textContent = 'Janela fechada';
+        });
+
+        imgJanela.addEventListener('click', () => {
+            imgJanela.src = 'janelas/janela_quebrada.jpg';
+            status.textContent = 'Janela quebrada';
+        });
+    </script>
+</body>
+</html>

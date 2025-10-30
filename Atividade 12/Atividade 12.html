@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 12 com Inputs</title>
+</head>
+
+<body>
+    <h2>Retângulo</h2>
+    Base: <input type="number" id="base" step="any"><br>
+    Altura: <input type="number" id="altura" step="any"><br>
+    <button onclick="calculaAreaRetangulo()">Calcular Área</button>
+    <p id="areaResultado"></p>
+
+    <hr>
+
+    <h2>Conta Corrente</h2>
+    Nome: <input type="text" id="nomeCorrente"><br>
+    Correntista: <input type="text" id="correntistaCorrente"><br>
+    Banco: <input type="text" id="bancoCorrente"><br>
+    Número da Conta: <input type="text" id="numContaCorrente"><br>
+    Saldo: <input type="number" id="saldoCorrente" step="any"><br>
+    Saldo Especial: <input type="number" id="saldoEspecialCorrente" step="any"><br>
+    <button onclick="mostrarDadosCorrente()">Mostrar Dados Corrente</button>
+    <pre id="dadosCorrente"></pre>
+
+    <hr>
+
+    <h2>Conta Poupança</h2>
+    Nome: <input type="text" id="nomePoupanca"><br>
+    Correntista: <input type="text" id="correntistaPoupanca"><br>
+    Banco: <input type="text" id="bancoPoupanca"><br>
+    Número da Conta: <input type="text" id="numContaPoupanca"><br>
+    Saldo: <input type="number" id="saldoPoupanca" step="any"><br>
+    Juros (%): <input type="number" id="jurosPoupanca" step="any"><br>
+    Data Vencimento: <input type="date" id="dataVencimentoPoupanca"><br>
+    <button onclick="mostrarDadosPoupanca()">Mostrar Dados Poupança</button>
+    <pre id="dadosPoupanca"></pre>
+
+    <script>
+        // Função construtora Retangulo
+        function Retangulo(base, altura) {
+            this.base = base;
+            this.altura = altura;
+            this.area = function () {
+                return this.base * this.altura;
+            };
+        }
+
+        function calculaAreaRetangulo() {
+            var base = parseFloat(document.getElementById('base').value);
+            var altura = parseFloat(document.getElementById('altura').value);
+            var ret = new Retangulo(base, altura);
+            document.getElementById('areaResultado').textContent = "Área do retângulo: " + ret.area();
+        }
+
+        // Classe Conta e sub-classes
+        class Conta {
+            constructor() {
+                this._nome = "";
+                this._correntista = "";
+                this._banco = "";
+                this._numeroConta = "";
+                this._saldo = 0;
+            }
+            set nome(value) { this._nome = value; }
+            get nome() { return this._nome; }
+            set correntista(value) { this._correntista = value; }
+            get correntista() { return this._correntista; }
+            set banco(value) { this._banco = value; }
+            get banco() { return this._banco; }
+            set numeroConta(value) { this._numeroConta = value; }
+            get numeroConta() { return this._numeroConta; }
+            set saldo(value) { this._saldo = value; }
+            get saldo() { return this._saldo; }
+        }
+
+        class Corrente extends Conta {
+            constructor() {
+                super();
+                this._saldoEspecial = 0;
+            }
+            set saldoEspecial(value) { this._saldoEspecial = value; }
+            get saldoEspecial() { return this._saldoEspecial; }
+        }
+
+        class Poupanca extends Conta {
+            constructor() {
+                super();
+                this._juros = 0;
+                this._dataVencimento = "";
+            }
+            set juros(value) { this._juros = value; }
+            get juros() { return this._juros; }
+            set dataVencimento(value) { this._dataVencimento = value; }
+            get dataVencimento() { return this._dataVencimento; }
+        }
+
+        function mostrarDadosCorrente() {
+            var corrente = new Corrente();
+            corrente.nome = document.getElementById('nomeCorrente').value;
+            corrente.correntista = document.getElementById('correntistaCorrente').value;
+            corrente.banco = document.getElementById('bancoCorrente').value;
+            corrente.numeroConta = document.getElementById('numContaCorrente').value;
+            corrente.saldo = parseFloat(document.getElementById('saldoCorrente').value);
+            corrente.saldoEspecial = parseFloat(document.getElementById('saldoEspecialCorrente').value);
+
+            var texto = "Dados Conta Corrente:\n" +
+                "Nome: " + corrente.nome + "\n" +
+                "Correntista: " + corrente.correntista + "\n" +
+                "Banco: " + corrente.banco + "\n" +
+                "Número da Conta: " + corrente.numeroConta + "\n" +
+                "Saldo: " + corrente.saldo + "\n" +
+                "Saldo Especial: " + corrente.saldoEspecial;
+
+            document.getElementById('dadosCorrente').textContent = texto;
+        }
+
+        function mostrarDadosPoupanca() {
+            var poupanca = new Poupanca();
+            poupanca.nome = document.getElementById('nomePoupanca').value;
+            poupanca.correntista = document.getElementById('correntistaPoupanca').value;
+            poupanca.banco = document.getElementById('bancoPoupanca').value;
+            poupanca.numeroConta = document.getElementById('numContaPoupanca').value;
+            poupanca.saldo = parseFloat(document.getElementById('saldoPoupanca').value);
+            poupanca.juros = parseFloat(document.getElementById('jurosPoupanca').value);
+            poupanca.dataVencimento = document.getElementById('dataVencimentoPoupanca').value;
+
+            var texto = "Dados Conta Poupança:\n" +
+                "Nome: " + poupanca.nome + "\n" +
+                "Correntista: " + poupanca.correntista + "\n" +
+                "Banco: " + poupanca.banco + "\n" +
+                "Número da Conta: " + poupanca.numeroConta + "\n" +
+                "Saldo: " + poupanca.saldo + "\n" +
+                "Juros: " + poupanca.juros + "%\n" +
+                "Data Vencimento: " + poupanca.dataVencimento;
+
+            document.getElementById('dadosPoupanca').textContent = texto;
+        }
+    </script>
+</body>
+
+</html>
